@@ -15,13 +15,20 @@ const morgan = require('morgan');
 
 const pirates = require('./routes/pirates');
 
+app.use('/javascripts', express.static(__dirname + '/../client/javascripts'))
+app.use('/stylesheets', express.static(__dirname + '/../client/stylesheets'))
+app.use('/views', express.static(__dirname + '/../client/views'))
+
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('tiny'));
 app.use('/api/pirates',pirates); // setting up the default path to use server as an API, can be chosen freely
 
-app.get("/", function(req,res){
-    res.send('Hello World 1');
+app.get("*", function(req,res){
+  // this path code is forbidden by Express()
+    // res.sendFile(__dirname + '/../client/views/layout.html')
+    // INSTEAD, use this:
+    res.sendFile('layout.html', {root: './client/views'});
 });
 
 
