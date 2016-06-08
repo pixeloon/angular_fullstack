@@ -20,6 +20,11 @@
       controller: 'NewPirateController',
       controllerAs: 'vm' // needs to be called differently with nested controllers
     })
+    .when('/pirates/:id/edit',{
+      templateUrl: '../views/pirates/edit.html',
+      controller: 'EditPirateController',
+      controllerAs: 'vm' // needs to be called differently with nested controllers
+    })
     .otherwise({redirectTo: '/pirates'}) // default route
     $locationProvider.html5Mode(true) // make sure to also use <base href="/">
 

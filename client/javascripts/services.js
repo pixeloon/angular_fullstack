@@ -25,9 +25,9 @@
         return $http.delete(BASE_URL + "/" + id)
       }
 
-      this.updatePirate = function(pirate) {
+      this.updatePirate = function(data) {
         // implement!
-        return $http.put(BASE_URL + "/" + pirate.id, pirate) // the second parameter is the data we send TO the server, is essentially req.body.pirate
+        return $http.put(BASE_URL + "/" + data.pirate.id, data) // the second parameter is the data we send TO the server, is essentially req.body.pirate
       }
     }
 
