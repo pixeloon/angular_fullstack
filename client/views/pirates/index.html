@@ -1,0 +1,27 @@
+<!-- <div class="container">
+<h1>Here are all the pirates!</h1>
+    <div class="panel panel-default" ng-repeat="pirate in vm.pirates">
+        <div class="panel-heading">Pirate #{{pirate.id}}</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img ng-src="{{pirate.image_url}}" alt="">
+                </div>
+                <div class="col-sm-8">
+                    <h2>{{ pirate.name }}</h2>
+                    <p>Poison: {{ pirate.poison }}</p>
+                    <p>Accessory: {{ pirate.accessory }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- // >>>> refactor to: -->
+<div class="container">
+<h1>Here are all the pirates!</h1>
+<!-- //called 'eachPirate' for demonstration puposes
+// 'pirate=' matches to scope key in component.js -->
+<gs-pirate-show ng-repeat='eachPirate in vm.pirates' pirate='eachPirate'></gs-pirate-show> 
+
+</div> <!-- // end container -->
