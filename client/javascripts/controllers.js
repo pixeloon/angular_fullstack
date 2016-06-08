@@ -51,6 +51,7 @@
         var vm = this;
         PirateService.getPirate($routeParams.id).then(function(res) {
             vm.pirate = res.data;
+            if (!vm.pirate) $location.path('/pirates');
         })
 
         vm.editPirate = function(pirate) {
